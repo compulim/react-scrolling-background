@@ -44,6 +44,7 @@ const ScrollingBackground = memo(({ backgroundImage, className, duration = 600_0
     &.scrolling-background {
       height: 100%;
       overflow-x: hidden;
+      position: relative;
       width: 100%;
     }
 
