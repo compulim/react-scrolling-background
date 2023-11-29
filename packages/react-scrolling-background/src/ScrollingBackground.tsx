@@ -8,26 +8,26 @@ type Props = {
   speed?: number | undefined;
 };
 
-CSS.registerProperty({
-  inherits: true,
-  initialValue: 'none',
-  name: '--scrolling-background__background-image',
-  syntax: '<image> | none'
-});
+// CSS.registerProperty({
+//   inherits: true,
+//   initialValue: 'none',
+//   name: '--scrolling-background__background-image',
+//   syntax: '<image> | none'
+// });
 
-CSS.registerProperty({
-  inherits: true,
-  initialValue: '600s',
-  name: '--scrolling-background__duration',
-  syntax: '<time>'
-});
+// CSS.registerProperty({
+//   inherits: true,
+//   initialValue: '600s',
+//   name: '--scrolling-background__duration',
+//   syntax: '<time>'
+// });
 
-CSS.registerProperty({
-  inherits: true,
-  initialValue: '3',
-  name: '--scrolling-background__speed',
-  syntax: '<number>'
-});
+// CSS.registerProperty({
+//   inherits: true,
+//   initialValue: '3',
+//   name: '--scrolling-background__speed',
+//   syntax: '<number>'
+// });
 
 const ScrollingBackground = memo(({ backgroundImage, className, duration = 600_000, speed = 3 }: Props) => {
   const ANIMATION = keyframes`
@@ -65,7 +65,7 @@ const ScrollingBackground = memo(({ backgroundImage, className, duration = 600_0
       '--scrolling-background__duration': `${duration}ms`,
       '--scrolling-background__speed': speed
     }),
-    [backgroundImage]
+    [backgroundImage, duration, speed]
   );
 
   return (
