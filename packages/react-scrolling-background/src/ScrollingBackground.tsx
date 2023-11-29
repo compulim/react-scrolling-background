@@ -1,35 +1,40 @@
-import { css, cx, keyframes } from '@emotion/css';
+import { cx } from '@emotion/css';
 import { memo, useMemo } from 'react';
+import createEmotion from '@emotion/css/create-instance';
 
 type Props = {
+  /** Background image of type [CSS <image>](https://developer.mozilla.org/en-US/docs/Web/CSS/image). */
   backgroundImage?: string | undefined;
+
+  /** CSS class to apply to the background container. */
   className?: string | undefined;
+
+  /** Durations (in milliseconds) to scroll the background. Defaults to 10 minutes. */
   duration?: number | undefined;
+
+  /** Nonce for injecting style sheet. */
+  nonce?: string | undefined;
+
+  /**
+   * Speed of the scrolling defined by number of full rotations done within the duration. Defaults to 3, meaning 3 full rotations in 10 minutes.
+   *
+   * Note: Speed will change depends on the container width. Narrower container will have its background scroll slower than wider container.
+   */
   speed?: number | undefined;
 };
 
-// CSS.registerProperty({
-//   inherits: true,
-//   initialValue: 'none',
-//   name: '--scrolling-background__background-image',
-//   syntax: '<image> | none'
-// });
+const CSS_KEY = 'css-rsb';
 
-// CSS.registerProperty({
-//   inherits: true,
-//   initialValue: '600s',
-//   name: '--scrolling-background__duration',
-//   syntax: '<time>'
-// });
+const ScrollingBackground = memo(({ backgroundImage, className, duration = 600_000, nonce, speed = 3 }: Props) => {
+  const { keyframes, css } = useMemo(
+    () =>
+      createEmotion({
+        ...(nonce ? { nonce } : {}),
+        key: CSS_KEY
+      }),
+    [nonce]
+  );
 
-// CSS.registerProperty({
-//   inherits: true,
-//   initialValue: '3',
-//   name: '--scrolling-background__speed',
-//   syntax: '<number>'
-// });
-
-const ScrollingBackground = memo(({ backgroundImage, className, duration = 600_000, speed = 3 }: Props) => {
   const ANIMATION = keyframes`
     0% {
       transform: translate3d(0, 0, 0);
