@@ -1,8 +1,11 @@
 import { css, cx, keyframes } from '@emotion/css';
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 
 type Props = {
-  className?: string;
+  backgroundImage?: string | undefined;
+  className?: string | undefined;
+  duration?: number | undefined;
+  speed?: number | undefined;
 };
 
 CSS.registerProperty({
@@ -14,12 +17,19 @@ CSS.registerProperty({
 
 CSS.registerProperty({
   inherits: true,
+  initialValue: '600s',
+  name: '--scrolling-background__duration',
+  syntax: '<time>'
+});
+
+CSS.registerProperty({
+  inherits: true,
   initialValue: '3',
   name: '--scrolling-background__speed',
   syntax: '<number>'
 });
 
-const ScrollingBackground = memo(({ className }: Props) => {
+const ScrollingBackground = memo(({ backgroundImage, className, duration = 600_000, speed = 3 }: Props) => {
   const ANIMATION = keyframes`
     0% {
       transform: translate3d(0, 0, 0);
@@ -39,7 +49,7 @@ const ScrollingBackground = memo(({ className }: Props) => {
 
     .scrolling-background__image {
       /* Stop animation after 10 minutes to save CPU */
-      animation: ${ANIMATION} 600s linear 1;
+      animation: ${ANIMATION} var(--scrolling-background__duration) linear 1;
       background-image: var(--scrolling-background__background-image);
       height: 100%;
       left: calc(var(--scrolling-background__speed) * -100%);
@@ -48,8 +58,18 @@ const ScrollingBackground = memo(({ className }: Props) => {
     }
   `;
 
+  const style = useMemo(
+    () => ({
+      '--scrolling-background__background-image': backgroundImage,
+      '--scrolling-background__duration': `${duration}ms`,
+      '--scrolling-background__speed': speed
+    }),
+    [backgroundImage]
+  );
+
   return (
-    <div className={cx('scrolling-background', CLASS_NAME, className)}>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    <div className={cx('scrolling-background', CLASS_NAME, className)} style={style as any}>
       <div className="scrolling-background__image" />
     </div>
   );
