@@ -62,6 +62,12 @@ const ScrollingBackground = memo(({ backgroundImage, className, duration = 600_0
       position: absolute;
       width: calc((var(--scrolling-background__speed) + 1) * 100%);
     }
+
+    @media (prefers-reduced-motion) {
+      .scrolling-background__image {
+        animation: unset;
+      }
+    }
   `;
 
   const style = useMemo(
