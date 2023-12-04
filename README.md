@@ -4,6 +4,10 @@ GPU-based subtle scrolling background, support reduced motion, sub-pixel movemen
 
 ## Background
 
+A fancy scrolling background to enhance simple projects.
+
+Despite the scrolling effect is purely based on CSS with GPU support, a large portion of the website will need to be updated frequently. Inevitably, this is putting a huge toll on CPU. Please use this component with care.
+
 ## How to use
 
 ```tsx
