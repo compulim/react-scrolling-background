@@ -33,6 +33,10 @@ const ScrollingBackground = ({
 
 ## Behaviors
 
+### Setting CSS custom property to `initial` is not working in Firefox
+
+As of writing, Firefox 120 does not support [`CSS.registerProperty`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/registerProperty_static) and [`@property`](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) rule yet. Setting a custom property to `initial` will not set it to the default value.
+
 ## Credits
 
 ["Hero Patterns"](https://heropatterns.com/) by [Steve Schoger](https://twitter.com/steveschoger) is licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/).
