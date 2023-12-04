@@ -7,11 +7,18 @@ import createClassName from './private/createClassName';
 
 type Props = {
   /**
-   * [Background shorthand CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background).
+   * [Background color CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color).
    *
-   * Can also specify via CSS custom property `--react-scrolling-background__background` in the element selected by `imageClassName`.
+   * Can also specify via CSS custom property `--react-scrolling-background__background-color`.
    */
-  background?: string | undefined;
+  backgroundColor?: string | undefined;
+
+  /**
+   * [Background image CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image).
+   *
+   * Can also specify via CSS custom property `--react-scrolling-background__background-image`.
+   */
+  backgroundImage?: string | undefined;
 
   /** CSS class to apply to the background container element. */
   className?: string | undefined;
@@ -19,12 +26,9 @@ type Props = {
   /**
    * Durations (in milliseconds) to scroll the background. Defaults to 10 minutes.
    *
-   * Can also specify via CSS custom property `--react-scrolling-background__duration` in the element selected by `imageClassName`.
+   * Can also specify via CSS custom property `--react-scrolling-background__duration`.
    */
   duration?: number | undefined;
-
-  /** CSS class to apply to the background element.*/
-  imageClassName?: string | undefined;
 
   /** Nonce for injecting style sheet. */
   nonce?: string | undefined;
@@ -34,49 +38,74 @@ type Props = {
    *
    * Note: Speed will change depends on the container width. Narrower container will have its background scroll slower than wider container.
    *
-   * Can also specify via CSS custom property `--react-scrolling-background__speed` in the element selected by `imageClassName`.
+   * Can also specify via CSS custom property `--react-scrolling-background__speed`.
    */
   speed?: number | undefined;
 };
 
 const CSS_KEY = 'css-rsb';
 
-const ScrollingBackground = memo(
-  ({ background, className, duration = 600_000, imageClassName, nonce, speed = 3 }: Props) => {
-    const emotionClassName = useMemo(() => {
-      if (nonce) {
-        const { css, keyframes } = createEmotion({
-          key: `${CSS_KEY}-${mathRandom().toString(36).substring(2, 7)}`,
-          nonce
-        });
+CSS.registerProperty({
+  inherits: true,
+  initialValue: 'transparent',
+  name: '--react-scrolling-background__background-color',
+  syntax: '<color>'
+});
 
-        return createClassName({ css, keyframes });
-      }
+CSS.registerProperty({
+  inherits: true,
+  name: '--react-scrolling-background__background-image'
+});
+
+CSS.registerProperty({
+  inherits: true,
+  initialValue: '600s',
+  name: '--react-scrolling-background__duration',
+  syntax: '<time>'
+});
+
+CSS.registerProperty({
+  inherits: true,
+  initialValue: '3',
+  name: '--react-scrolling-background__speed',
+  syntax: '<number>'
+});
+
+const ScrollingBackground = memo(({ backgroundColor, backgroundImage, className, duration, nonce, speed }: Props) => {
+  const emotionClassName = useMemo(() => {
+    if (nonce) {
+      const { css, keyframes } = createEmotion({
+        key: `${CSS_KEY}-${mathRandom().toString(36).substring(2, 7)}`,
+        nonce
+      });
 
       return createClassName({ css, keyframes });
-    }, [nonce]);
+    }
 
-    const style = useMemo(
-      () =>
-        ({
-          '--react-scrolling-background__background-image': background || 'inherit',
-          '--react-scrolling-background__duration': duration && `${duration}ms`,
-          '--react-scrolling-background__speed': speed
-        }) as const,
-      [background, duration, speed]
-    );
+    return createClassName({ css, keyframes });
+  }, [nonce]);
 
-    return (
-      <div
-        className={cx('react-scrolling-background', emotionClassName, className)}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        style={style as any}
-      >
-        <div className={cx('react-scrolling-background__image', imageClassName)} />
-      </div>
-    );
-  }
-);
+  const style = useMemo(
+    () =>
+      ({
+        '--react-scrolling-background__background-color': backgroundColor,
+        '--react-scrolling-background__background-image': backgroundImage,
+        '--react-scrolling-background__duration': typeof duration === 'number' ? `${duration}ms` : undefined,
+        '--react-scrolling-background__speed': speed
+      }) as const,
+    [backgroundColor, backgroundImage, duration, speed]
+  );
+
+  return (
+    <div
+      className={cx('react-scrolling-background', emotionClassName, className)}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      style={style as any}
+    >
+      <div className="react-scrolling-background__image" />
+    </div>
+  );
+});
 
 ScrollingBackground.displayName = 'ScrollingBackground';
 

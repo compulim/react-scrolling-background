@@ -27,7 +27,8 @@ export default function createClassName({ css, keyframes }: EmotionInstance) {
     .react-scrolling-background__image {
       /* Stop animation after 10 minutes to save CPU */
       animation: ${ANIMATION} var(--react-scrolling-background__duration) linear 1;
-      background: var(--react-scrolling-background__background);
+      background-color: var(--react-scrolling-background__background-color);
+      background-image: var(--react-scrolling-background__background-image);
       height: 100%;
       left: calc(var(--react-scrolling-background__speed) * -100%);
       position: absolute;

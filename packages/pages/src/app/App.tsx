@@ -24,10 +24,7 @@ const App = () => (
 --react-scrolling-background__speed: 30;`}
       </pre>
       <div className="app__box">
-        <ScrollingBackground
-          backgroundClassName="app__background--css-custom-property"
-          backgroundImage={BACKGROUND_IMAGE}
-        />
+        <ScrollingBackground className="app__background--css-custom-property" />
       </div>
     </section>
   </div>
