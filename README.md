@@ -1,6 +1,6 @@
 # `react-scrolling-background`
 
-GPU-based scrolling background, support reduced motion and auto stop.
+GPU-based scrolling background, support reduced motion, sub-pixel movement, and auto stop.
 
 ## Background
 

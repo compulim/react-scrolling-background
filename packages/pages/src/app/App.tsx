@@ -12,7 +12,7 @@ const App = () => (
       </h2>
       <pre>{'<ScrollingBackground backgroundImage="data:image/svg+xml,..." speed={30} />'}</pre>
       <div className="app__box">
-        <ScrollingBackground backgroundImage={BACKGROUND_IMAGE} />
+        <ScrollingBackground backgroundImage={BACKGROUND_IMAGE} speed={30} />
       </div>
     </section>
     <section className="app__pane">
@@ -20,13 +20,24 @@ const App = () => (
         Use CSS custom property: <code>--react-scrolling-background__background-image</code>
       </h2>
       <pre>
-        {`--react-scrolling-background__background-image: url(data:image/svg+xml,...);
+        {`--react-scrolling-background__background-color: red;
+--react-scrolling-background__background-image: url(data:image/svg+xml,...);
 --react-scrolling-background__speed: 30;`}
       </pre>
       <div className="app__box">
         <ScrollingBackground className="app__background--css-custom-property" />
       </div>
     </section>
+    <footer>
+      <h2>Credits</h2>
+      <ul>
+        <li>
+          <a href="https://heropatterns.com/">&quot;Hero Patterns&quot;</a> by{' '}
+          <a href="https://twitter.com/steveschoger">Steve Schoger</a> is licensed under{' '}
+          <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+        </li>
+      </ul>
+    </footer>
   </div>
 );
 
