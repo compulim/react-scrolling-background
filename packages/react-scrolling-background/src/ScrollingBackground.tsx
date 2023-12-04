@@ -4,6 +4,8 @@ import createEmotion from '@emotion/css/create-instance';
 import mathRandom from 'math-random';
 
 import createClassName from './private/createClassName';
+import tryRegisterProperty from './private/tryRegisterProperty';
+import propertyDefinitions from './private/propertyDefinitions';
 
 type Props = {
   /**
@@ -45,31 +47,9 @@ type Props = {
 
 const CSS_KEY = 'css-rsb';
 
-CSS?.registerProperty?.({
-  inherits: true,
-  initialValue: 'transparent',
-  name: '--react-scrolling-background__background-color',
-  syntax: '<color>'
-});
-
-CSS?.registerProperty?.({
-  inherits: true,
-  name: '--react-scrolling-background__background-image'
-});
-
-CSS?.registerProperty?.({
-  inherits: true,
-  initialValue: '600s',
-  name: '--react-scrolling-background__duration',
-  syntax: '<time>'
-});
-
-CSS?.registerProperty?.({
-  inherits: true,
-  initialValue: '3',
-  name: '--react-scrolling-background__speed',
-  syntax: '<number>'
-});
+for (const [name, definition] of propertyDefinitions.entries()) {
+  tryRegisterProperty({ ...definition, name });
+}
 
 const ScrollingBackground = memo(({ backgroundColor, backgroundImage, className, duration, nonce, speed }: Props) => {
   const emotionClassName = useMemo(() => {
@@ -102,7 +82,9 @@ const ScrollingBackground = memo(({ backgroundColor, backgroundImage, className,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       style={style as any}
     >
-      <div className="react-scrolling-background__image" />
+      <div className="react-scrolling-background__properties">
+        <div className="react-scrolling-background__image" />
+      </div>
     </div>
   );
 });
