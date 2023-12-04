@@ -1,6 +1,9 @@
-import { cx } from '@emotion/css';
+import { css, cx, keyframes } from '@emotion/css';
 import { memo, useMemo } from 'react';
 import createEmotion from '@emotion/css/create-instance';
+import mathRandom from 'math-random';
+
+import createClassName from './private/createClassName';
 
 type Props = {
   /** CSS class to apply to the background element. */
@@ -28,87 +31,60 @@ type Props = {
 
 const CSS_KEY = 'css-rsb';
 
-CSS.registerProperty({
-  inherits: false,
-  // initialValue: 'unset',
-  name: '--react-scrolling-background__background-image',
-  // syntax: '<image>'
-  syntax: '*'
-});
+// CSS.registerProperty({
+//   inherits: false,
+//   // initialValue: 'unset',
+//   name: '--react-scrolling-background__background-image',
+//   // syntax: '<image>'
+//   syntax: '*'
+// });
 
-CSS.registerProperty({
-  inherits: false,
-  initialValue: '600s',
-  name: '--react-scrolling-background__duration',
-  syntax: '<time>'
-});
+// CSS.registerProperty({
+//   inherits: false,
+//   initialValue: '600s',
+//   name: '--react-scrolling-background__duration',
+//   syntax: '<time>'
+// });
 
-CSS.registerProperty({
-  inherits: false,
-  initialValue: '3',
-  name: '--react-scrolling-background__speed',
-  syntax: '<number>'
-});
+// CSS.registerProperty({
+//   inherits: false,
+//   initialValue: '3',
+//   name: '--react-scrolling-background__speed',
+//   syntax: '<number>'
+// });
 
 const ScrollingBackground = memo(
-  ({ backgroundClassName, backgroundImage, className, duration, nonce, speed }: Props) => {
-    const { keyframes, css } = useMemo(
-      () =>
-        createEmotion({
-          ...(nonce ? { nonce } : {}),
-          key: CSS_KEY
-        }),
-      [nonce]
-    );
+  ({ backgroundClassName, backgroundImage, className, duration = 600_000, nonce, speed = 3 }: Props) => {
+    const emotionClassName = useMemo(() => {
+      if (nonce) {
+        const { css, keyframes } = createEmotion({
+          key: `${CSS_KEY}-${mathRandom().toString(36).substring(2, 7)}`,
+          nonce
+        });
 
-    const ANIMATION = keyframes`
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(calc(100% / (var(--react-scrolling-background__speed) + 1) * var(--react-scrolling-background__speed)), 0, 0);
-    }
-  `;
-
-    const CLASS_NAME = css`
-      &.scrolling-background {
-        height: 100%;
-        overflow-x: hidden;
-        position: relative;
-        width: 100%;
+        return createClassName({ css, keyframes });
       }
 
-      .scrolling-background__image {
-        /* Stop animation after 10 minutes to save CPU */
-        animation: ${ANIMATION} var(--react-scrolling-background__duration) linear 1;
-        background-image: var(--react-scrolling-background__background-image);
-        height: 100%;
-        left: calc(var(--react-scrolling-background__speed) * -100%);
-        position: absolute;
-        width: calc((var(--react-scrolling-background__speed) + 1) * 100%);
-      }
-
-      @media (prefers-reduced-motion) {
-        .scrolling-background__image {
-          animation: unset;
-        }
-      }
-    `;
+      return createClassName({ css, keyframes });
+    }, [nonce]);
 
     const style = useMemo(
-      () => ({
-        '--react-scrolling-background__background-image': backgroundImage || 'inherit',
-        '--react-scrolling-background__duration': duration && `${duration}ms`,
-        '--react-scrolling-background__speed': speed
-      }),
+      () =>
+        ({
+          '--react-scrolling-background__background-image': backgroundImage || 'inherit',
+          '--react-scrolling-background__duration': duration && `${duration}ms`,
+          '--react-scrolling-background__speed': speed
+        }) as const,
       [backgroundImage, duration, speed]
     );
 
     return (
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      <div className={cx('scrolling-background', CLASS_NAME, className)} style={style as any}>
-        <div className={cx('scrolling-background__image', backgroundClassName)} />
+      <div
+        className={cx('react-scrolling-background', emotionClassName, className)}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        style={style as any}
+      >
+        <div className={cx('react-scrolling-background__image', backgroundClassName)} />
       </div>
     );
   }

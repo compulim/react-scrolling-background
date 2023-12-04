@@ -12,7 +12,7 @@ const App = () => (
       </h2>
       <pre>{'<ScrollingBackground backgroundImage="data:image/svg+xml,..." speed={30} />'}</pre>
       <div className="app__box">
-        <ScrollingBackground backgroundImage={BACKGROUND_IMAGE} speed={30} />
+        <ScrollingBackground backgroundImage={BACKGROUND_IMAGE} />
       </div>
     </section>
     <section className="app__pane">
@@ -20,10 +20,7 @@ const App = () => (
         Use CSS custom property: <code>--react-scrolling-background__background-image</code>
       </h2>
       <pre>
-        {`--react-scrolling-background__background-color: rgba(255, 0, 0, .5);
---react-scrolling-background__background-image: url(data:image/svg+xml,...);
---react-scrolling-background__background-position: 50% 50%;
---react-scrolling-background__background-size: 100px;
+        {`--react-scrolling-background__background-image: url(data:image/svg+xml,...);
 --react-scrolling-background__speed: 30;`}
       </pre>
       <div className="app__box">
