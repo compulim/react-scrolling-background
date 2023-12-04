@@ -25,7 +25,7 @@ const App = () => (
     <section className="app__pane">
       <h2>Use CSS custom property</h2>
       <pre>
-        {`.react-scrolling-background__properties {
+        {`.react-scrolling-background__vars {
   --react-scrolling-background__background-color: #F66;
   --react-scrolling-background__background-image: url(data:image/svg+xml,...);
   --react-scrolling-background__speed: 30;

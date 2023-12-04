@@ -82,7 +82,7 @@ const ScrollingBackground = memo(({ backgroundColor, backgroundImage, className,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       style={style as any}
     >
-      <div className="react-scrolling-background__properties">
+      <div className="react-scrolling-background__vars">
         <div className="react-scrolling-background__image" />
       </div>
     </div>
