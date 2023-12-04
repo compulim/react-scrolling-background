@@ -19,7 +19,7 @@ const App = () => (
   speed={30}
 />`}</pre>
       <div className="app__box">
-        <ScrollingBackground backgroundColor="#6CC" backgroundImage={BACKGROUND_IMAGE} speed={30} />
+        <ScrollingBackground backgroundColor="#6CC" backgroundImage={BACKGROUND_IMAGE} nonce="a1b2c3d" speed={30} />
       </div>
     </section>
     <section className="app__pane">
@@ -37,7 +37,7 @@ const App = () => (
 }`}
       </pre>
       <div className="app__box">
-        <ScrollingBackground className="app__background--css-custom-property" />
+        <ScrollingBackground className="app__background--css-custom-property" nonce="a1b2c3d" />
       </div>
     </section>
     <footer>
