@@ -1,6 +1,6 @@
 # `react-scrolling-background`
 
-GPU-based scrolling background with auto stop.
+GPU-based scrolling background, support reduced motion and auto stop.
 
 ## Background
 
@@ -8,7 +8,10 @@ GPU-based scrolling background with auto stop.
 
 ```tsx
 render(
-  <ScrollingBackground />
+  <ScrollingBackground
+    backgroundColor="red"
+    backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'...`}
+  />
 );
 ```
 
@@ -16,12 +19,19 @@ render(
 
 ```ts
 const ScrollingBackground = ({
+  backgroundColor?: string;
   backgroundImage?: string;
   className?: string;
+  duration?: number;
+  speed?: number;
 }) => ReactElement;
 ```
 
 ## Behaviors
+
+## Credits
+
+["Hero Patterns"](https://heropatterns.com/) by [Steve Schoger](https://twitter.com/steveschoger) is licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/).
 
 ## Contributions
 
