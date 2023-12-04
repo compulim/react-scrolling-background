@@ -45,26 +45,26 @@ type Props = {
 
 const CSS_KEY = 'css-rsb';
 
-CSS.registerProperty({
+CSS?.registerProperty?.({
   inherits: true,
   initialValue: 'transparent',
   name: '--react-scrolling-background__background-color',
   syntax: '<color>'
 });
 
-CSS.registerProperty({
+CSS?.registerProperty?.({
   inherits: true,
   name: '--react-scrolling-background__background-image'
 });
 
-CSS.registerProperty({
+CSS?.registerProperty?.({
   inherits: true,
   initialValue: '600s',
   name: '--react-scrolling-background__duration',
   syntax: '<time>'
 });
 
-CSS.registerProperty({
+CSS?.registerProperty?.({
   inherits: true,
   initialValue: '3',
   name: '--react-scrolling-background__speed',
