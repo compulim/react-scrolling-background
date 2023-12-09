@@ -65,10 +65,10 @@ for (const [name, definition] of propertyDefinitions.entries()) {
   tryRegisterProperty({ ...definition, name });
 }
 
-const ScrollingBackground = memo((props: Output<typeof PropsSchema>) => {
+const ScrollingBackground = memo((props: Readonly<Output<typeof PropsSchema>>) => {
   const { backgroundColor, backgroundImage, className, duration, nonce, speed, style } = parse(PropsSchema, props);
 
-  const emotionClassName = useMemo(() => {
+  const emotionClassName = useMemo<string>(() => {
     if (nonce) {
       const { css, keyframes } = createEmotion({
         key: `${CSS_KEY}-${mathRandom().toString(36).substring(2, 7)}`,
@@ -81,7 +81,7 @@ const ScrollingBackground = memo((props: Output<typeof PropsSchema>) => {
     return createClassName({ css, keyframes });
   }, [nonce]);
 
-  const varsStyle = useMemo<CSSProperties>(
+  const varsStyle = useMemo<Readonly<CSSProperties>>(
     () => ({
       '--react-scrolling-background__background-color': backgroundColor,
       '--react-scrolling-background__background-image': backgroundImage,

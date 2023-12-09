@@ -2,10 +2,10 @@ import { type css, type keyframes } from '@emotion/css';
 
 import propertyDefinitions from './propertyDefinitions';
 
-type EmotionInstance = {
+type EmotionInstance = Readonly<{
   css: typeof css;
   keyframes: typeof keyframes;
-};
+}>;
 
 export default function createClassName({ css, keyframes }: EmotionInstance) {
   const ANIMATION = keyframes`
