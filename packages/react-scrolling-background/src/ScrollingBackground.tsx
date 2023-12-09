@@ -38,7 +38,11 @@ type Props = {
    */
   duration?: number | undefined;
 
-  /** Nonce for injecting style sheet. */
+  /**
+   * Nonce for allowlisting specific elements under content security policy.
+   *
+   * This package requires `script-src` and `style-src`.
+   */
   nonce?: string | undefined;
 
   /**
