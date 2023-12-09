@@ -80,7 +80,7 @@ When setting custom properties via CSS stylesheet, sets the CSS custom propertie
 
 ### Setting CSS custom property to `initial` is not working in Firefox
 
-As of writing, Firefox 120 does not support [`CSS.registerProperty`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/registerProperty_static) and [`@property`](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) rule yet. Setting a custom property to `initial` will not reset it back to the default value.
+As of this writing, Firefox 120 does not support [`CSS.registerProperty`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/registerProperty_static) and [`@property`](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) rule yet. Setting a custom property to `initial` will not reset it back to the default value.
 
 ### Should I use React props or CSS custom properties?
 
@@ -88,7 +88,7 @@ As of writing, Firefox 120 does not support [`CSS.registerProperty`](https://dev
 
 Unless certain effect is required, we recommend using React props. Compare to CSS custom properties, props provides best type-safety features.
 
-### How can I modify `background-size`?
+### How can I modify `background-size` and other CSS properties of the background image?
 
 You can use the CSS selector `.react-scrolling-background__image` to select the image element and set `background-size` and various CSS properties. Additional CSS selectors can be found in [this section](#css-selectors).
 
