@@ -5,7 +5,8 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "noEmit": false,
-    "target": "ESNext"
+    "target": "ESNext",
+    "types": []
   },
   "exclude": ["**/*.spec.*", "**/*.test.*", "__tests__/**/*"],
   "extends": "@tsconfig/strictest/tsconfig.json"

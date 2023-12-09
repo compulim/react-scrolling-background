@@ -4,8 +4,8 @@ import createEmotion from '@emotion/css/create-instance';
 import mathRandom from 'math-random';
 
 import createClassName from './private/createClassName';
-import tryRegisterProperty from './private/tryRegisterProperty';
 import propertyDefinitions from './private/propertyDefinitions';
+import tryRegisterProperty from './private/tryRegisterProperty';
 
 type Props = {
   /**
