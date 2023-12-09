@@ -92,11 +92,7 @@ const ScrollingBackground = memo((props: Readonly<Output<typeof PropsSchema>>) =
   );
 
   return (
-    <div
-      className={cx('react-scrolling-background', emotionClassName, className)}
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      style={style}
-    >
+    <div className={cx('react-scrolling-background', emotionClassName, className)} style={style}>
       <div className="react-scrolling-background__vars" style={varsStyle}>
         <div className="react-scrolling-background__image" />
       </div>
