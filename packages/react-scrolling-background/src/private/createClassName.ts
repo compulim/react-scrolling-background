@@ -26,15 +26,12 @@ export default function createClassName({ css, keyframes }: EmotionInstance) {
       width: '100%',
 
       ...Array.from(propertyDefinitions.entries()).reduce<Record<`--react-scrolling-background__${string}`, string>>(
-        (style, [name, { initialValue }]) => ({
-          ...style,
-          [name]: initialValue
-        }),
+        (style, [name, { initialValue }]) => ({ ...style, [name]: initialValue }),
         {}
       )
     },
 
-    '.react-scrolling-background__css-custom-properties': {
+    '.react-scrolling-background__vars': {
       display: 'content'
     },
 
