@@ -48,7 +48,13 @@
   },
   "keywords": [
     "background",
+    "content security policy",
+    "csp",
     "css",
+    "css custom properties",
+    "css variables",
+    "react",
+    "reduced motion",
     "scrolling"
   ],
   "author": "William Wong (https://github.com/compulim)",
