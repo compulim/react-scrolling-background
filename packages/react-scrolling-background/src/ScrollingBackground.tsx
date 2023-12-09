@@ -1,6 +1,6 @@
 import { any, number, object, optional, parse, string, type Output } from 'valibot';
 import { css, cx, keyframes } from '@emotion/css';
-import { type CSSProperties, memo, useMemo } from 'react';
+import { memo, type CSSProperties, useMemo } from 'react';
 import createEmotion from '@emotion/css/create-instance';
 import mathRandom from 'math-random';
 
