@@ -4,6 +4,8 @@ GPU-based subtle scrolling background, support [Content Security Policy](https:/
 
 ## Background
 
+Check out the [live demo](https://compulim.github.io/react-scrolling-background/).
+
 This component is a fancy scrolling background to enhance simple projects.
 
 Note: despite the scrolling effect is purely based on CSS with GPU support, a large portion of the website will need to be updated frequently. Inevitably, this is putting a huge toll on CPU. Please use this component with care.
