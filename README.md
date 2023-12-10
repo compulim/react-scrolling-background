@@ -58,16 +58,6 @@ const ScrollingBackground = ({
 }) => ReactElement;
 ```
 
-| Props name        | Description                                                                                                                                                                                                                                                                         |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `backgroundColor` | [Background color CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color).                                                                                                                                                                                 |
-| `backgroundImage` | [Background image CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image).                                                                                                                                                                                 |
-| `className`       | CSS class to apply to the background container element.                                                                                                                                                                                                                             |
-| `duration`        | Durations (in milliseconds) to scroll the background. Defaults to 10 minutes.                                                                                                                                                                                                       |
-| `nonce`           | Nonce for allowlisting specific elements under content security policy. This package requires `script-src` and `style-src`.                                                                                                                                                         |
-| `speed`           | Speed of the scrolling defined by number of full rotations done within the duration. Defaults to 3, meaning 3 full rotations in 10 minutes. Note: Speed will change depends on the container width. Narrower container will have its background scroll slower than wider container. |
-| `style`           | CSS properties to apply to the main element.                                                                                                                                                                                                                                        |
-
 ### CSS custom properties
 
 When setting custom properties via CSS stylesheet, sets the CSS custom properties under the `react-scrolling-background__vars` element.
@@ -80,6 +70,18 @@ When setting custom properties via CSS stylesheet, sets the CSS custom propertie
   --react-scrolling-background__speed: <number>;
 }
 ```
+
+### Description
+
+| Props name        | CSS custom property                              | Description                                                                                                                                                                                                                                                                         |
+| ----------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `backgroundColor` | `--react-scrolling-background__background-color` | [Background color CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color).                                                                                                                                                                                 |
+| `backgroundImage` | `--react-scrolling-background__background-image` | [Background image CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image).                                                                                                                                                                                 |
+| `className`       |                                                  | CSS class to apply to the background container element.                                                                                                                                                                                                                             |
+| `duration`        | `--react-scrolling-background__duration`         | Durations (in milliseconds) to scroll the background. Defaults to 10 minutes.                                                                                                                                                                                                       |
+| `nonce`           |                                                  | Nonce for allowlisting specific elements under content security policy. This package requires `script-src` and `style-src`.                                                                                                                                                         |
+| `speed`           | `--react-scrolling-background__speed`            | Speed of the scrolling defined by number of full rotations done within the duration. Defaults to 3, meaning 3 full rotations in 10 minutes. Note: Speed will change depends on the container width. Narrower container will have its background scroll slower than wider container. |
+| `style`           |                                                  | CSS properties to apply to the main element.                                                                                                                                                                                                                                        |
 
 ### CSS selectors
 
