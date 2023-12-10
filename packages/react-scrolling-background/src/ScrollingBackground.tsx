@@ -1,4 +1,14 @@
-import { any, number, object, optional, parse, string, type Output } from 'valibot';
+import {
+  any,
+  number,
+  object,
+  optional,
+  parse,
+  string,
+  type OptionalSchema,
+  type Output,
+  type StringSchema
+} from 'valibot';
 import { css, cx, keyframes } from '@emotion/css';
 import { memo, type CSSProperties, useMemo } from 'react';
 import createEmotion from '@emotion/css/create-instance';
@@ -20,14 +30,14 @@ const PropsSchema = object({
    *
    * Can also specify via CSS custom property `--react-scrolling-background__background-color`.
    */
-  backgroundColor: optional(string()),
+  backgroundColor: optional(string()) as OptionalSchema<StringSchema<CSSProperties['backgroundColor']>>,
 
   /**
    * [Background image CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image).
    *
    * Can also specify via CSS custom property `--react-scrolling-background__background-image`.
    */
-  backgroundImage: optional(string()),
+  backgroundImage: optional(string()) as OptionalSchema<StringSchema<CSSProperties['backgroundImage']>>,
 
   /** CSS class to apply to the background container element. */
   className: optional(string()),
