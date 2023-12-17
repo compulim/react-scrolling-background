@@ -102,9 +102,17 @@ const ScrollingBackground = memo((props: Readonly<Output<typeof PropsSchema>>) =
   );
 
   return (
-    <div className={cx('react-scrolling-background', emotionClassName, className)} style={style}>
-      <div className="react-scrolling-background__vars" style={varsStyle}>
-        <div className="react-scrolling-background__image" />
+    <div
+      className={cx('react-scrolling-background', emotionClassName, className)}
+      data-testid="react-scrolling-background"
+      style={style}
+    >
+      <div
+        className="react-scrolling-background__vars"
+        data-testid="react-scrolling-background__vars"
+        style={varsStyle}
+      >
+        <div className="react-scrolling-background__image" data-testid="react-scrolling-background__image" />
       </div>
     </div>
   );

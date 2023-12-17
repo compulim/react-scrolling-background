@@ -3,8 +3,7 @@
 import { create } from 'react-test-renderer';
 import { ScrollingBackground } from 'react-scrolling-background';
 
-test('simple scenario', () => {
-  const result = create(ScrollingBackground);
-
-  expect(result).toMatchInlineSnapshot();
-});
+test('simple scenario', () =>
+  expect(
+    create(<ScrollingBackground />).root.findByProps({ 'data-testid': 'react-scrolling-background' })
+  ).toBeTruthy());
