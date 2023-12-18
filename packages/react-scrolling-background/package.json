@@ -3,8 +3,7 @@
   "version": "0.0.0-0",
   "description": "CSS stylesheet for scrolling background.",
   "files": [
-    "./lib/",
-    "./src/index.css"
+    "./lib/"
   ],
   "exports": {
     ".": {
@@ -16,8 +15,7 @@
         "types": "./lib/commonjs/index.d.ts",
         "default": "./lib/commonjs/index.js"
       }
-    },
-    "./css": "./src/index.css"
+    }
   },
   "main": "./lib/commonjs/index.js",
   "typings": "./lib/commonjs/index.d.ts",
