@@ -1,5 +1,6 @@
 import { npm } from 'inject-meta-tag';
 
+import * as TestIds from './TestIds';
 import ScrollingBackground from './ScrollingBackground';
 
 declare global {
@@ -14,3 +15,4 @@ declare global {
 npm(process.env.npm_package_name, { version: process.env.npm_package_version });
 
 export { ScrollingBackground };
+export { TestIds };

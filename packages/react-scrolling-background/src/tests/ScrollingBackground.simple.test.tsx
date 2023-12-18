@@ -2,12 +2,12 @@
 
 import { render, screen } from '@testing-library/react';
 
-import { ScrollingBackground } from '../../src/index';
+import { ScrollingBackground, TestIds } from '../../src/index';
 
 describe('render <ScrollingBackground>', () => {
   beforeEach(() => {
     render(<ScrollingBackground />);
   });
 
-  test('should render', () => expect(screen.findByTestId('react-scrolling-background')).resolves.toBeTruthy());
+  test('should render', () => expect(screen.findByTestId(TestIds.root)).resolves.toBeTruthy());
 });

@@ -14,6 +14,7 @@ import { memo, type CSSProperties, useMemo } from 'react';
 import createEmotion from '@emotion/css/create-instance';
 import mathRandom from 'math-random';
 
+import * as TestIds from './TestIds';
 import createClassName from './private/createClassName';
 import propertyDefinitions from './private/propertyDefinitions';
 import tryRegisterProperty from './private/tryRegisterProperty';
@@ -104,15 +105,11 @@ const ScrollingBackground = memo((props: Readonly<Output<typeof PropsSchema>>) =
   return (
     <div
       className={cx('react-scrolling-background', emotionClassName, className)}
-      data-testid="react-scrolling-background"
+      data-testid={TestIds.root}
       style={style}
     >
-      <div
-        className="react-scrolling-background__vars"
-        data-testid="react-scrolling-background__vars"
-        style={varsStyle}
-      >
-        <div className="react-scrolling-background__image" data-testid="react-scrolling-background__image" />
+      <div className="react-scrolling-background__vars" data-testid={TestIds.customProperties} style={varsStyle}>
+        <div className="react-scrolling-background__image" data-testid={TestIds.image} />
       </div>
     </div>
   );
