@@ -10,7 +10,8 @@ import {
   type StringSchema
 } from 'valibot';
 import { css, cx, keyframes } from '@emotion/css';
-import { memo, type CSSProperties, useMemo } from 'react';
+import { memo, useMemo } from 'react';
+import { type Properties as CSSProperties } from 'csstype';
 import createEmotion from '@emotion/css/create-instance';
 import mathRandom from 'math-random';
 
@@ -19,8 +20,8 @@ import createClassName from './private/createClassName';
 import propertyDefinitions from './private/propertyDefinitions';
 import tryRegisterProperty from './private/tryRegisterProperty';
 
-declare module 'react' {
-  interface CSSProperties {
+declare module 'csstype' {
+  interface Properties {
     [key: `--${string}`]: number | string | undefined;
   }
 }
