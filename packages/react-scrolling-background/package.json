@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/compulim/css-scrolling-background.git"
+    "url": "git+https://github.com/compulim/react-scrolling-background.git"
   },
   "keywords": [
     "background",
@@ -58,9 +58,9 @@
   "author": "William Wong (https://github.com/compulim)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/compulim/css-scrolling-background/issues"
+    "url": "https://github.com/compulim/react-scrolling-background/issues"
   },
-  "homepage": "https://github.com/compulim/css-scrolling-background#readme",
+  "homepage": "https://github.com/compulim/react-scrolling-background#readme",
   "peerDependencies": {
     "react": ">=16.9.0"
   },
