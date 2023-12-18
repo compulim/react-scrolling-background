@@ -31,9 +31,7 @@ body:
       multiple: true
       options:
         - 'ESM: import { useRefFrom } from "react-scrolling-background"'
-        - 'ESM: import useRefFrom from "react-scrolling-background/useRefFrom"'
         - 'CommonJS: require("react-scrolling-background")'
-        - 'CommonJS: require("react-scrolling-background/useRefFrom")'
         - Others or unrelated
     validations:
       required: true
@@ -80,21 +78,12 @@ body:
       render: js
       value: |
         import { renderHook } from '@testing-library/react';
-        import { useRefFrom } from 'react-scrolling-background';
+        import { ScrollingBackground } from 'react-scrolling-background';
 
         test('simple scenario', () => {
-          // WHEN: Calling useRefFrom() with 123.
-          const { result } = renderHook(
-            ({ input }) => {
-              const ref = useRefFrom(input);
+          render(<ScrollingBackground />);
 
-              return ref.current;
-            },
-            { initialProps: { input: 123 } }
-          );
-
-          // THEN: It should return 123.
-          expect(result.current).toBe(123);
+          expect(screen.findByTestId('react-scrolling-background')).resolves.toBeTruthy());
         });
   - type: input
     attributes:
