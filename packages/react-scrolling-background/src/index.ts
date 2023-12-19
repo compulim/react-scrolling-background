@@ -4,15 +4,12 @@ import * as TestIds from './TestIds';
 import ScrollingBackground from './ScrollingBackground';
 
 declare global {
-  const process: {
-    env: {
-      npm_package_name: string;
-      npm_package_version: string;
-    };
-  };
+  // Globals from babel-plugin-transform-define.
+  const npm_package_name: string;
+  const npm_package_version: string;
 }
 
-npm(process.env.npm_package_name, { version: process.env.npm_package_version });
+npm(npm_package_name, { version: npm_package_version });
 
 export { ScrollingBackground };
 export { TestIds };

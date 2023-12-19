@@ -1,5 +1,5 @@
 {
-  "extends": "./babel.production.config.json",
+  "extends": "./babel.production.config.js",
   "plugins": [
     [
       "@babel/plugin-transform-runtime",
