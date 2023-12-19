@@ -13,8 +13,8 @@ module.exports = {
     [
       'babel-plugin-transform-define',
       {
-        npm_package_name: process.env.npm_package_name,
-        npm_package_version: process.env.npm_package_version
+        'ReactScrollingBackground.npm_package_name': process.env.npm_package_name,
+        'ReactScrollingBackground.npm_package_version': process.env.npm_package_version
       }
     ]
   ]

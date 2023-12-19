@@ -5,11 +5,13 @@ import ScrollingBackground from './ScrollingBackground';
 
 declare global {
   // Globals from babel-plugin-transform-define.
-  const npm_package_name: string;
-  const npm_package_version: string;
+  const ReactScrollingBackground: {
+    get npm_package_name(): string;
+    get npm_package_version(): string;
+  };
 }
 
-npm(npm_package_name, { version: npm_package_version });
+npm(ReactScrollingBackground.npm_package_name, { version: ReactScrollingBackground.npm_package_version });
 
 export { ScrollingBackground };
 export { TestIds };
