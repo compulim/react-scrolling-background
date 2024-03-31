@@ -6,3 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- Updated pull request validation to test against various React versions, in PR [#1](https://github.com/compulim/react-scrolling-background/pull/1)
+   - Moved from JSX Runtime to JSX Classic to support testing against React 16
