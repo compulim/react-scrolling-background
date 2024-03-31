@@ -3,11 +3,6 @@ env:
 extends:
   - eslint:recommended
 overrides:
-  - files:
-      - '**/babel.*.config.js'
-    env:
-      browser: false
-      node: true
   - extends: .eslintrc.react.yml
     files:
       - '**/*.jsx'
