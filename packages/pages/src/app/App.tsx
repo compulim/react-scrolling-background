@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Fragment, memo, useMemo } from 'react';
+import React, { Fragment, memo, useMemo } from 'react';
 
 import { ScrollingBackground } from 'react-scrolling-background';
 
