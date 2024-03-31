@@ -1,5 +1,6 @@
 /** @jest-environment jsdom */
 
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { ScrollingBackground, TestIds } from '../../src/index';
