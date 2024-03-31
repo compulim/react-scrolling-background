@@ -80,6 +80,7 @@
     "@types/math-random": "^1.0.2",
     "@types/react": "^18.2.25",
     "babel-plugin-transform-define": "^2.1.4",
+    "escape-string-regexp": "^5.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "typescript": "^5.2.2"
