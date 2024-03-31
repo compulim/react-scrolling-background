@@ -5,6 +5,15 @@
     "\\.[jt]sx?$": [
       "babel-jest",
       {
+        "plugins": [
+          [
+            "babel-plugin-transform-define",
+            {
+              "ReactScrollingBackground.npm_package_name": "react-scrolling-background",
+              "ReactScrollingBackground.npm_package_version": "0.0.0-jest"
+            }
+          ]
+        ],
         "presets": [
           [
             "@babel/preset-react",
