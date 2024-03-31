@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "react",
     "types": ["jest"]
   },
   "extends": "../tsconfig.precommit.test.json",
