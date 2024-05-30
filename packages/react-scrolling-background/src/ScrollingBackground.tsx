@@ -10,8 +10,8 @@ import {
   optional,
   parse,
   string,
+  type InferOutput,
   type OptionalSchema,
-  type Output,
   type StringSchema
 } from 'valibot';
 
@@ -32,14 +32,14 @@ const PropsSchema = object({
    *
    * Can also specify via CSS custom property `--react-scrolling-background__background-color`.
    */
-  backgroundColor: optional(string()) as OptionalSchema<StringSchema<CSSProperties['backgroundColor']>>,
+  backgroundColor: optional(string()) as OptionalSchema<StringSchema<CSSProperties['backgroundColor']>, never>,
 
   /**
    * [Background image CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image).
    *
    * Can also specify via CSS custom property `--react-scrolling-background__background-image`.
    */
-  backgroundImage: optional(string()) as OptionalSchema<StringSchema<CSSProperties['backgroundImage']>>,
+  backgroundImage: optional(string()) as OptionalSchema<StringSchema<CSSProperties['backgroundImage']>, never>,
 
   /** CSS class to apply to the background container element. */
   className: optional(string()),
@@ -77,7 +77,7 @@ for (const [name, definition] of propertyDefinitions.entries()) {
   tryRegisterProperty({ ...definition, name });
 }
 
-const ScrollingBackground = memo((props: Readonly<Output<typeof PropsSchema>>) => {
+const ScrollingBackground = memo((props: Readonly<InferOutput<typeof PropsSchema>>) => {
   const { backgroundColor, backgroundImage, className, duration, nonce, speed, style } = parse(PropsSchema, props);
 
   const emotionClassName = useMemo<string>(() => {
