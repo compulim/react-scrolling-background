@@ -1,6 +1,6 @@
 import { type css, type keyframes } from '@emotion/css';
 
-import propertyDefinitions from './propertyDefinitions';
+import propertyDefinitions from './propertyDefinitions.ts';
 
 type EmotionInstance = Readonly<{
   css: typeof css;

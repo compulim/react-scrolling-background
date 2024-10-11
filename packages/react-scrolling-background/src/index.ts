@@ -1,7 +1,8 @@
 import { npm } from 'inject-meta-tag';
 
-import * as TestIds from './TestIds';
-import ScrollingBackground from './ScrollingBackground';
+import ScrollingBackground from './ScrollingBackground.tsx';
+// eslint-disable-next-line import/no-namespace
+import * as TestIds from './TestIds.ts';
 
 declare global {
   // Globals from babel-plugin-transform-define.
@@ -13,5 +14,4 @@ declare global {
 
 npm(ReactScrollingBackground.npm_package_name, { version: ReactScrollingBackground.npm_package_version });
 
-export { ScrollingBackground };
-export { TestIds };
+export { ScrollingBackground, TestIds };
