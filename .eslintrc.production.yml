@@ -41,3 +41,6 @@ settings:
     - .mts
     - .ts
     - .tsx
+  import/resolver:
+    node: true
+    typescript: true
