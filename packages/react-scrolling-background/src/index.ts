@@ -5,7 +5,8 @@ import ScrollingBackground from './ScrollingBackground.tsx';
 import * as TestIds from './TestIds.ts';
 
 declare global {
-  // Globals from babel-plugin-transform-define.
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore TypeScript load ./dist/*.d.ts causing duplication
   const ReactScrollingBackground: {
     get npm_package_name(): string;
     get npm_package_version(): string;

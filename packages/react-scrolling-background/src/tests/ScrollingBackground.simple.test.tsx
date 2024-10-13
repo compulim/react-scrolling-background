@@ -3,7 +3,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { ScrollingBackground, TestIds } from '../../src/index';
+import { ScrollingBackground, TestIds } from '../../dist/react-scrolling-background.js';
 
 describe('render <ScrollingBackground>', () => {
   beforeEach(() => {

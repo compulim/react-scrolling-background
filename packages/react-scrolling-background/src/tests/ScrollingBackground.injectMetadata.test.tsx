@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { ScrollingBackground } from '../../src/index';
+import { ScrollingBackground } from '../../dist/react-scrolling-background.js';
 
 describe('importing the package', () => {
   beforeEach(() => <ScrollingBackground />);
@@ -10,6 +10,6 @@ describe('importing the package', () => {
   test('should inject package metadata', () =>
     expect(document.head.querySelector('meta[name="npm:react-scrolling-background"]')).toHaveProperty(
       'content',
-      'version=0.0.0-jest'
+      'version=0.0.0-0'
     ));
 });
