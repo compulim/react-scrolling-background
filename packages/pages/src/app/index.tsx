@@ -5,9 +5,9 @@ import React from 'react';
 import { render } from 'react-dom';
 // import { createRoot } from 'react-dom/client';
 
-import App from './App';
+import App from './App.tsx';
 
-const [rootElement] = document.getElementsByTagName('MAIN');
+const rootElement = document.getElementsByTagName('MAIN')[0];
 
 // rootElement && createRoot(rootElement).render(<App />);
 rootElement && render(<App />, rootElement);
