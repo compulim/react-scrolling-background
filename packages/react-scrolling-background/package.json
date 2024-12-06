@@ -58,7 +58,7 @@
     "devDependencies": {
       "@testing-library/react": "^12",
       "@types/react": "^16",
-      "react": "16.0.0"
+      "react": "16.8.0"
     }
   },
   "switch:react-17": {
@@ -100,5 +100,8 @@
     "inject-meta-tag": "^0.0.1",
     "math-random": "^2.0.1",
     "valibot": "^0.42.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
   }
 }
