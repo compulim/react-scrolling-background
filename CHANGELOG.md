@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## Unreleased
 
 ### Changed
 
@@ -44,3 +44,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - [`esbuild@0.24.0`](https://npmjs.com/package/esbuild/v/0.24.0)
     - [`tsup@8.3.0`](https://npmjs.com/package/tsup/v/8.3.0)
     - [`typescript@5.6.3`](https://npmjs.com/package/typescript/v/5.6.3)
+- Bumped dependencies, in PR [#22](https://github.com/compulim/react-scrolling-background/pull/22)
+  - Production dependencies
+    - [`@emotion/css@11.13.5`](https://npmjs.com/package/@emotion/css/v/11.13.5)
+    - [`csstype@3.2.3`](https://npmjs.com/package/csstype/v/3.2.3)
+    - [`valibot@1.2.0`](https://npmjs.com/package/valibot/v/1.2.0)
+  - Development dependencies
+    - [`@babel/preset-env@7.28.5`](https://npmjs.com/package/@babel/preset-env/v/7.28.5)
+    - [`@babel/preset-react@7.28.5`](https://npmjs.com/package/@babel/preset-react/v/7.28.5)
+    - [`@babel/preset-typescript@7.28.5`](https://npmjs.com/package/@babel/preset-typescript/v/7.28.5)
+    - [`@testing-library/dom@10.4.1`](https://npmjs.com/package/@testing-library/dom/v/10.4.1)
+    - [`@testing-library/jest-dom@6.9.1`](https://npmjs.com/package/@testing-library/jest-dom/v/6.9.1)
+    - [`@testing-library/react@16.3.1`](https://npmjs.com/package/@testing-library/react/v/16.3.1)
+    - [`@tsconfig/recommended@1.0.13`](https://npmjs.com/package/@tsconfig/recommended/v/1.0.13)
+    - [`@tsconfig/strictest@2.0.8`](https://npmjs.com/package/@tsconfig/strictest/v/2.0.8)
+    - [`@types/jest@30.0.0`](https://npmjs.com/package/@types/jest/v/30.0.0)
+    - [`@types/react@19.2.7`](https://npmjs.com/package/@types/react/v/19.2.7)
+    - [`@types/react-dom@19.2.3`](https://npmjs.com/package/@types/react-dom/v/19.2.3)
+    - [`@types/react-test-renderer@19.1.0`](https://npmjs.com/package/@types/react-test-renderer/v/19.1.0)
+    - [`esbuild@0.27.2`](https://npmjs.com/package/esbuild/v/0.27.2)
+    - [`jest@30.2.0`](https://npmjs.com/package/jest/v/30.2.0)
+    - [`jest-environment-jsdom@30.2.0`](https://npmjs.com/package/jest-environment-jsdom/v/30.2.0)
+    - [`publint@0.3.16`](https://npmjs.com/package/publint/v/0.3.16)
+    - [`react@19.2.3`](https://npmjs.com/package/react/v/19.2.3)
+    - [`react-dom@19.2.3`](https://npmjs.com/package/react-dom/v/19.2.3)
+    - [`react-test-renderer@19.2.3`](https://npmjs.com/package/react-test-renderer/v/19.2.3)
+    - [`tsup@8.5.1`](https://npmjs.com/package/tsup/v/8.5.1)
+    - [`typescript@5.9.3`](https://npmjs.com/package/typescript/v/5.9.3)
