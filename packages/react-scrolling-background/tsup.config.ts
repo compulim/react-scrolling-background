@@ -11,6 +11,7 @@ export default defineConfig([
       'react-scrolling-background': './src/index.ts'
     },
     format: ['cjs', 'esm'],
-    sourcemap: true
+    sourcemap: true,
+    target: 'esnext'
   }
 ]);

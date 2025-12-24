@@ -2,3 +2,8 @@ env:
   browser: true
 extends:
   - ../../.eslintrc.react.yml
+rules:
+  # Disable for convenience
+  react/display-name: off
+  # Disable for convenience
+  react/prop-types: off
