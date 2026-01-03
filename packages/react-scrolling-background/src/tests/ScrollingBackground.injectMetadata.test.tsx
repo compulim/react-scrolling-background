@@ -1,11 +1,16 @@
+import { cleanup, render } from '@testing-library/react';
 import { expect } from 'expect';
-import { beforeEach, describe, test } from 'node:test';
+import { afterEach, beforeEach, describe, test } from 'node:test';
 import React from 'react';
 
 import { ScrollingBackground } from '../../dist/react-scrolling-background.mjs';
 
 describe('importing the package', () => {
-  beforeEach(() => <ScrollingBackground />);
+  beforeEach(() => {
+    render(<ScrollingBackground />);
+  });
+
+  afterEach(cleanup);
 
   test('should inject package metadata', () => {
     expect(document.head.querySelector('meta[name="npm:react-scrolling-background"]')).toHaveProperty(
