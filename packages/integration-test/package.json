@@ -1,8 +1,14 @@
 {
-  "name": "react-scrolling-background-integration-test",
+  "name": "@compulim/integration-test",
   "version": "0.0.0-0",
   "description": "",
   "private": true,
+  "files": [
+    "**/*.cjs",
+    "**/*.js",
+    "**/*.mjs",
+    "webDriver/**/*"
+  ],
   "scripts": {
     "build": "npm run build:copy && npm run build:custom --if-present",
     "build:copy": "mkdir -p ./webDriver/static/; SRC=$(node --eval=\"console.log(require('path').resolve(require('resolve-cwd')('react-scrolling-background'), '../../dist'))\"); DEST=$(realpath ./webDriver/static); rm -rf $DEST; mkdir -p $DEST/js/; cp $SRC/** $DEST/js/",
@@ -28,10 +34,7 @@
       "@testing-library/react": "^12",
       "@types/react": "^16",
       "@types/react-dom": "^16",
-      "@types/react-test-renderer": "^16",
-      "react": "16.8.0",
-      "react-dom": "16.8.0",
-      "react-test-renderer": "16.8.0"
+      "@types/react-test-renderer": "^16"
     },
     "dependencies": {
       "react": "16.8.0",
@@ -44,10 +47,7 @@
       "@testing-library/react": "^12",
       "@types/react": "^17",
       "@types/react-dom": "^17",
-      "@types/react-test-renderer": "^17",
-      "react": "17.0.0",
-      "react-dom": "17.0.0",
-      "react-test-renderer": "17.0.0"
+      "@types/react-test-renderer": "^17"
     },
     "dependencies": {
       "react": "17.0.0",
@@ -59,20 +59,13 @@
     "devDependencies": {
       "@types/react": "^18",
       "@types/react-dom": "^18",
-      "@types/react-test-renderer": "^18",
-      "react": "18.0.0",
-      "react-dom": "18.0.0",
-      "react-test-renderer": "18.0.0"
+      "@types/react-test-renderer": "^18"
     },
     "dependencies": {
       "react": "18.0.0",
       "react-dom": "18.0.0",
       "react-test-renderer": "18.0.0"
     }
-  },
-  "localPeerDependencies": {
-    "@compulim/test-harness": "0.0.0-0",
-    "react-scrolling-background": "0.0.0-0"
   },
   "pinDependencies": {
     "@types/react": [
@@ -81,29 +74,31 @@
     "@types/react-dom": [
       "18"
     ],
+    "@types/react-test-renderer": [
+      "18"
+    ],
     "react": [
       "18"
     ],
     "react-dom": [
       "18"
     ],
-    "@types/react-test-renderer": [
-      "18"
-    ],
     "react-test-renderer": [
       "18"
     ]
   },
+  "localPeerDependencies": {
+    "@compulim/test-harness": "0.0.0-0",
+    "react-scrolling-background": "0.0.0-0"
+  },
   "devDependencies": {
-    "@babel/preset-env": "^7.25.8",
-    "@babel/preset-react": "^7.25.7",
+    "@compulim/test-harness": "0.0.0-0",
     "@testing-library/react": "^16.0.1",
     "@tsconfig/strictest": "^2.0.5",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.2",
     "@types/react-test-renderer": "^18.3.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
+    "expect": "^30.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-test-renderer": "^18.3.1",
@@ -111,13 +106,5 @@
   },
   "dependencies": {
     "react-scrolling-background": "^0.0.0-0"
-  },
-  "files": [
-    "**/*.cjs",
-    "**/*.js",
-    "**/*.mjs",
-    "webDriver/**/*"
-  ],
-  "exports": {},
-  "peerDependencies": {}
+  }
 }

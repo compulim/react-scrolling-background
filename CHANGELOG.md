@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+| Icon | Description                                       |
+| ---- | ------------------------------------------------- |
+| 💢   | Breaking changes                                  |
+| 👷🏻   | Development experience (non-production impacting) |
+
 ## [Unreleased]
 
 ### Changed
@@ -44,3 +49,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - [`esbuild@0.24.0`](https://npmjs.com/package/esbuild/v/0.24.0)
     - [`tsup@8.3.0`](https://npmjs.com/package/tsup/v/8.3.0)
     - [`typescript@5.6.3`](https://npmjs.com/package/typescript/v/5.6.3)
+- 👷🏻 Test framework moved to Node.js test runner, by [@compulim](https://github.com/compulim) in PR [#24](https://github.com/compulim/react-scrolling-background/pull/24)

@@ -1,5 +1,5 @@
 {
-  "name": "react-scrolling-background-pages",
+  "name": "@compulim/pages",
   "version": "0.0.0-0",
   "description": "",
   "private": true,
@@ -67,6 +67,7 @@
       "18"
     ]
   },
+  "peerDependencies": {},
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.5",
     "@types/react": "^18.3.11",
@@ -78,7 +79,5 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scrolling-background": "^0.0.0-0"
-  },
-  "exports": {},
-  "peerDependencies": {}
+  }
 }
