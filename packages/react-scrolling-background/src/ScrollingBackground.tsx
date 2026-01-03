@@ -4,7 +4,7 @@ import createEmotion from '@emotion/css/create-instance';
 // eslint-disable-next-line import/consistent-type-specifier-style
 import type { Properties as CSSProperties } from 'csstype';
 import mathRandom from 'math-random';
-import React, { memo, useMemo } from 'react';
+import React from 'react';
 import { any, number, object, optional, parse, string, type InferOutput, type StringSchema } from 'valibot';
 
 // eslint-disable-next-line import/no-namespace
@@ -12,6 +12,8 @@ import * as TestIds from './TestIds.ts';
 import createClassName from './private/createClassName.ts';
 import propertyDefinitions from './private/propertyDefinitions.ts';
 import tryRegisterProperty from './private/tryRegisterProperty.ts';
+
+const { memo, useMemo } = React;
 
 declare module 'csstype' {
   interface Properties {

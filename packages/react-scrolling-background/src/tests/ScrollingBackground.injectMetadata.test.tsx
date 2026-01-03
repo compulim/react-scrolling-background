@@ -1,15 +1,21 @@
-/** @jest-environment jsdom */
-
+import { cleanup, render } from '@testing-library/react';
+import { expect } from 'expect';
+import { afterEach, beforeEach, describe, test } from 'node:test';
 import React from 'react';
 
-import { ScrollingBackground } from '../../dist/react-scrolling-background.js';
+import { ScrollingBackground } from '../../dist/react-scrolling-background.mjs';
 
 describe('importing the package', () => {
-  beforeEach(() => <ScrollingBackground />);
+  beforeEach(() => {
+    render(<ScrollingBackground />);
+  });
 
-  test('should inject package metadata', () =>
+  afterEach(cleanup);
+
+  test('should inject package metadata', () => {
     expect(document.head.querySelector('meta[name="npm:react-scrolling-background"]')).toHaveProperty(
       'content',
       'version=0.0.0-0'
-    ));
+    );
+  });
 });

@@ -1,17 +1,23 @@
-import { defineConfig } from 'tsup';
+import { defineConfig, type Options } from 'tsup';
+import overrideConfig from './tsup.config.override.ts';
+
+const baseConfig: Options = {
+  dts: true,
+  entry: {
+    'react-scrolling-background': './src/index.ts'
+  },
+  sourcemap: true
+};
 
 export default defineConfig([
-  {
-    define: {
-      'ReactScrollingBackground.npm_package_name': JSON.stringify(process.env.npm_package_name || ''),
-      'ReactScrollingBackground.npm_package_version': JSON.stringify(process.env.npm_package_version || '')
-    },
-    dts: true,
-    entry: {
-      'react-scrolling-background': './src/index.ts'
-    },
-    format: ['cjs', 'esm'],
-    sourcemap: true,
+  overrideConfig({
+    ...baseConfig,
+    format: ['esm'],
     target: 'esnext'
-  }
+  }),
+  overrideConfig({
+    ...baseConfig,
+    format: ['cjs'],
+    target: 'es2019' // For compatibility with Webpack 4.
+  })
 ]);
