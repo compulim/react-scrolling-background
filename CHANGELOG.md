@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | 💢   | Breaking changes                                  |
 | 👷🏻   | Development experience (non-production impacting) |
 
-## [Unreleased]
+## Unreleased
 
 ### Changed
 
@@ -50,3 +50,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - [`tsup@8.3.0`](https://npmjs.com/package/tsup/v/8.3.0)
     - [`typescript@5.6.3`](https://npmjs.com/package/typescript/v/5.6.3)
 - 👷🏻 Test framework moved to Node.js test runner, by [@compulim](https://github.com/compulim) in PR [#24](https://github.com/compulim/react-scrolling-background/pull/24)
+- Bumped dependencies, in PR [#25](https://github.com/compulim/react-scrolling-background/pull/25)
+  - Production dependencies
+    - [`@emotion/css@11.13.5`](https://npmjs.com/package/@emotion/css/v/11.13.5)
+    - [`csstype@3.2.3`](https://npmjs.com/package/csstype/v/3.2.3)
+    - [`valibot@1.2.0`](https://npmjs.com/package/valibot/v/1.2.0)
+  - Development dependencies
+    - [`@testing-library/react@16.3.1`](https://npmjs.com/package/@testing-library/react/v/16.3.1)
+    - [`@tsconfig/recommended@1.0.13`](https://npmjs.com/package/@tsconfig/recommended/v/1.0.13)
+    - [`@tsconfig/strictest@2.0.8`](https://npmjs.com/package/@tsconfig/strictest/v/2.0.8)
+    - [`@types/react@18.3.27`](https://npmjs.com/package/@types/react/v/18.3.27)
+    - [`@types/react-dom@18.3.7`](https://npmjs.com/package/@types/react-dom/v/18.3.7)
+    - [`@types/react-test-renderer@18.3.1`](https://npmjs.com/package/@types/react-test-renderer/v/18.3.1)
+    - [`esbuild@0.27.2`](https://npmjs.com/package/esbuild/v/0.27.2)
+    - [`publint@0.3.16`](https://npmjs.com/package/publint/v/0.3.16)
+    - [`tsup@8.5.1`](https://npmjs.com/package/tsup/v/8.5.1)
+    - [`typescript@5.9.3`](https://npmjs.com/package/typescript/v/5.9.3)
